@@ -41,6 +41,8 @@
 // Network SSID and password
 #define NETWORK_SSID "Christmas"
 #define NETWORK_PASSWORD "configure"
+// Set the hostname of the unit. You can use this name as option for the OTA upload
+#define HOSTNAME "christmas.local"
 
 // No need to change anything after this.
 CRGB leds[NUMBER_OF_LEDS];
@@ -71,6 +73,7 @@ void setup()
 
   changeColor(CRGB::Red);
   WiFiManager wifiManager;
+  WiFi.hostname(HOSTNAME);
   // wifiManager.resetSettings();
 
   changeColor(CRGB::Blue);
